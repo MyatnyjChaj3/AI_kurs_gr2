@@ -1,15 +1,9 @@
 from __future__ import annotations
 
 import pandas as pd
-
-from eda_cli.core import (
-    compute_quality_flags,
-    correlation_matrix,
-    flatten_summary_for_print,
-    missing_table,
-    summarize_dataset,
-    top_categories,
-)
+from eda_cli.core import (compute_quality_flags, correlation_matrix,
+                          flatten_summary_for_print, missing_table,
+                          summarize_dataset, top_categories)
 
 
 def _sample_df() -> pd.DataFrame:
@@ -59,3 +53,20 @@ def test_correlation_and_top_categories():
     city_table = top_cats["city"]
     assert "value" in city_table.columns
     assert len(city_table) <= 2
+
+def test_quality_flags_new_heuristics():
+    df = pd.DataFrame(
+        {
+            "constant_col": [1, 1, 1, 1],
+            "category": ["A", "B", "C", "D"],
+            "value": [10, 20, 30, 40],
+        }
+    )
+
+    summary = summarize_dataset(df)
+    missing_df = missing_table(df)
+
+    flags = compute_quality_flags(summary, missing_df)
+
+    assert flags["has_constant_columns"] is True
+    assert flags["has_high_cardinality_categoricals"] is True
