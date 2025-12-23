@@ -245,6 +245,45 @@ curl -X POST "http://127.0.0.1:8000/quality-from-csv" \
 - `dataset_shape` - реальные размеры датасета (`n_rows`, `n_cols`);
 - `latency_ms` - время обработки запроса.
 
+### 5. `POST /quality-flags-from-csv` – расширенные флаги качества
+
+Эндпоинт возвращает полный набор проверок датасета, включая новые эвристики
+
+**Запрос:**
+
+```http
+POST /quality-flags-from-csv
+Content-Type: multipart/form-data
+file: <CSV-файл>
+```
+
+**Пример вызова через `curl`:**
+
+```bash
+curl -X POST "http://127.0.0.1:8000/quality-flags-from-csv" \
+  -F "file=@data/example.csv"
+```
+
+### 6. `POST /summary-from-csv` – детальная статистика в JSON
+
+Возвращает полную статистическую сводку по всем колонкам датасета (типы, уникальные значения, статистики min/max/mean/std)
+
+**Запрос:**
+
+```http
+POST /summary-from-csv
+Content-Type: multipart/form-data
+file: <CSV-файл>
+```
+
+**Пример вызова через `curl`:**
+
+```bash
+curl -X POST "http://127.0.0.1:8000/summary-from-csv" \
+  -F "file=@data/example.csv"
+```
+
+
 ---
 
 ## Структура проекта (упрощённо)
