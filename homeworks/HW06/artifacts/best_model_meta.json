@@ -1,0 +1,10 @@
+{
+  "best_model_label": "Boosting",
+  "test_metrics": {
+    "model": "Boosting",
+    "accuracy": 0.9784,
+    "f1": 0.7239263803680982,
+    "roc_auc": 0.9067860198487149
+  },
+  "random_state": 42
+}
