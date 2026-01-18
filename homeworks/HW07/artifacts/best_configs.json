@@ -1,0 +1,25 @@
+{
+    "S07-hw-dataset-01": {
+        "algorithm": "KMeans",
+        "params": {
+            "n_clusters": 2
+        },
+        "reason": "Highest Silhouette Score (automated choice)"
+    },
+    "S07-hw-dataset-02": {
+        "algorithm": "DBSCAN",
+        "params": {
+            "eps": 0.1,
+            "min_samples": 10
+        },
+        "reason": "Highest Silhouette Score (automated choice)"
+    },
+    "S07-hw-dataset-03": {
+        "algorithm": "DBSCAN",
+        "params": {
+            "eps": 0.1,
+            "min_samples": 10
+        },
+        "reason": "Highest Silhouette Score (automated choice)"
+    }
+}
