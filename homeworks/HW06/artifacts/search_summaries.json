@@ -1,9 +1,11 @@
 {
   "DecisionTree": {
     "best_params": {
+      "ccp_alpha": 0.0,
       "class_weight": "balanced",
       "max_depth": 5,
-      "min_samples_leaf": 50
+      "min_samples_leaf": 50,
+      "min_samples_split": 20
     },
     "best_cv_score": 0.8147834818961073
   },
