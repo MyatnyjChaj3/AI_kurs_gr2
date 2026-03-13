@@ -1,0 +1,14 @@
+{
+    "experiment_id": "E4",
+    "dataset": "EMNIST",
+    "hidden_sizes": [
+        512,
+        256,
+        128
+    ],
+    "use_dropout": false,
+    "use_batchnorm": true,
+    "lr": 0.001,
+    "seed": 42,
+    "best_val_accuracy": 0.8590868794326241
+}
