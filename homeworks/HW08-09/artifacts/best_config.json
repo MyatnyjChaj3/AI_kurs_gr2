@@ -6,9 +6,12 @@
         256,
         128
     ],
+    "activation": "relu",
     "use_dropout": false,
     "use_batchnorm": true,
+    "optimizer": "Adam",
     "lr": 0.001,
+    "batch_size": 64,
     "seed": 42,
-    "best_val_accuracy": 0.8590868794326241
+    "best_val_accuracy": 0.8581117021276595
 }
