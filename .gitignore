@@ -55,3 +55,8 @@ logs/
 *.tmp
 *.bak
 *.old
+report*/
+homeworks/HW08-09/data/
+homeworks/HW08-09/KMNIST/
+ai_lecture/
+homeworks/HW*/data/

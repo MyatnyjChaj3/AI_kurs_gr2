@@ -1,0 +1,7 @@
+experiment_id,task,dataset,seed,model_summary,optimizer,lr,epochs_trained,best_val_accuracy,test_accuracy,precision,recall,mean_iou,notes
+C1,classification,CIFAR-100,42,SimpleCNN (3 conv blocks),Adam,0.001,30,0.5694,,,,,Без аугментаций
+C2,classification,CIFAR-100,42,SimpleCNN (3 conv blocks),Adam,0.001,30,0.595,,,,,"RandomCrop, HFlip, ColorJitter"
+C3,classification,CIFAR-100,42,ResNet18 pretrained; head-only,Adam,0.001,10,0.5592,,,,,"Backbone frozen, только fc обучается"
+C4,classification,CIFAR-100,42,ResNet18 pretrained; layer4+fc finetune,Adam,0.0003,10,0.7104,0.7164,,,,"layer4 lr=3e-5, fc lr=3e-4"
+V1,segmentation,OxfordIIITPet,42,DeepLabV3-ResNet50 (COCO/VOC),—,—,0,,,0.7699,0.9778,0.7541,Базовая: argmax → бинарная маска cat+dog
+V2,segmentation,OxfordIIITPet,42,DeepLabV3-ResNet50 (COCO/VOC),—,—,0,,,0.7704,0.9776,0.7544,Морфологическая очистка: удаление компонент < 500 px

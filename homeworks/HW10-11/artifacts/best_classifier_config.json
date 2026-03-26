@@ -1,0 +1,20 @@
+{
+  "experiment_id": "C4",
+  "model_name": "resnet18-finetune",
+  "dataset": "CIFAR-100",
+  "num_classes": 100,
+  "seed": 42,
+  "batch_size": 128,
+  "epochs_trained": 10,
+  "optimizer": "Adam",
+  "lr": 0.001,
+  "weight_decay": "1e-4 (CNN) / 0 (ResNet)",
+  "val_split": 0.2,
+  "best_val_acc": 0.7104,
+  "test_acc": 0.7164,
+  "transforms": {
+    "C1/C2_base": "Compose(\n    ToTensor()\n    Normalize(mean=(0.5071, 0.4867, 0.4408), std=(0.2675, 0.2565, 0.2761))\n)",
+    "C2_aug": "Compose(\n    RandomCrop(size=(32, 32), padding=4)\n    RandomHorizontalFlip(p=0.5)\n    ColorJitter(brightness=(0.8, 1.2), contrast=(0.8, 1.2), saturation=(0.8, 1.2), hue=None)\n    ToTensor()\n    Normalize(mean=(0.5071, 0.4867, 0.4408), std=(0.2675, 0.2565, 0.2761))\n)",
+    "C3/C4_rn18": "ImageClassification(\n    crop_size=[224]\n    resize_size=[256]\n    mean=[0.485, 0.456, 0.406]\n    std=[0.229, 0.224, 0.225]\n    interpolation=InterpolationMode.BILINEAR\n)"
+  }
+}
