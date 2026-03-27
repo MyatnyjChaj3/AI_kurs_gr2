@@ -1,0 +1,13 @@
+{
+  "input_size": 1,
+  "hidden_size": 64,
+  "num_layers": 2,
+  "dropout": 0.1,
+  "window_size": 24,
+  "batch_size": 64,
+  "lr": 0.0005,
+  "epochs": 40,
+  "seed": 42,
+  "scaler": "StandardScaler",
+  "epochs_trained": 40
+}
