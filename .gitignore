@@ -62,3 +62,4 @@ ai_lecture/
 homeworks/HW*/data/
 homeworks/HW*/output*/
 homeworks/HW*/S12-hw-dataset.csv
+homeworks/HW*/knowledge_base.json
